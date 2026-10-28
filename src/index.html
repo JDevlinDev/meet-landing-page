@@ -6,56 +6,133 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Heebo:wght@400;500;700&family=Fira+Code:wght@400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap"
       rel="stylesheet"
     />
-    <!-- <link rel="icon" href="./images/favicon.png" type="image/png" /> -->
+    <link rel="icon" href="./images/favicon-32x32.png" type="image/png" sizes="32x32" />
     <link rel="stylesheet" href="./scss/style.scss" />
 
-    <title>Newbie FEM Starter Pack</title>
+    <title>Frontend Mentor | Meet landing page</title>
   </head>
   <body>
+    <header class="header">
+      <img class="header__logo" src="./images/logo.svg" alt="Meet" width="119" height="28" />
+    </header>
+
     <main class="main">
-      <article class="card">
-        <p class="card__eyebrow">
-          <span class="card__eyebrow-logo" aria-hidden="true"></span>
-          Frontend Mentor
-        </p>
-        <h1 class="card__title">Newbie FEM Starter Pack</h1>
-        <p class="card__text">
-          A newbie-friendly, BEM-inspired project template with zero-config bundling and
-          optimization, and one-command deployment to GitHub Pages. Use it to build modular,
-          scalable, and maintainable Frontend Mentor projects you'll want to keep building on. The
-          template is built on the following tools:
-        </p>
-        <ul class="tools">
-          <li class="tools__item">
-            <span class="tools__icon tools__icon--sass" aria-hidden="true"></span>
-            <span class="tools__name">Sass</span>
-            <span class="tools__desc">Programmable, reusable styles</span>
+      <section class="hero" aria-labelledby="hero-title">
+        <!-- Decorative: one combined image below lg, split left/right from lg up -->
+        <picture class="hero__image hero__image--left">
+          <source media="(min-width: 62rem)" srcset="./images/desktop/image-hero-left.png" />
+          <img src="./images/tablet/image-hero.png" alt="" width="820" height="303" />
+        </picture>
+        <img
+          class="hero__image hero__image--right"
+          src="./images/desktop/image-hero-right.png"
+          alt=""
+          width="394"
+          height="303"
+        />
+
+        <div class="hero__content">
+          <h1 class="hero__title" id="hero-title">Group Chat for Everyone</h1>
+          <p class="hero__text">
+            Meet makes it easy to connect with others face-to-face virtually and collaborate across
+            any device.
+          </p>
+          <div class="hero__actions">
+            <a class="button button--cyan" href="#">
+              Download <span class="button__version">v1.3</span>
+            </a>
+            <a class="button button--purple" href="#features">What is it?</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="features" id="features" aria-labelledby="features-title">
+        <div class="divider" aria-hidden="true">
+          <span class="divider__number">01</span>
+        </div>
+
+        <ul class="gallery">
+          <li class="gallery__item">
+            <img
+              class="gallery__image"
+              src="./images/desktop/image-woman-in-videocall.jpg"
+              alt="A woman smiling during a video call on her laptop"
+              width="510"
+              height="484"
+            />
           </li>
-          <li class="tools__item">
-            <span class="tools__icon tools__icon--bem" aria-hidden="true"></span>
-            <span class="tools__name">BEM</span>
-            <span class="tools__desc">Component-based CSS conventions</span>
+          <li class="gallery__item">
+            <img
+              class="gallery__image"
+              src="./images/desktop/image-women-videochatting.jpg"
+              alt="Three women gathered around a phone, video chatting"
+              width="510"
+              height="484"
+            />
           </li>
-          <li class="tools__item">
-            <span class="tools__icon tools__icon--parcel" aria-hidden="true"></span>
-            <span class="tools__name">Parcel</span>
-            <span class="tools__desc">Bundling and optimization</span>
+          <li class="gallery__item">
+            <img
+              class="gallery__image"
+              src="./images/desktop/image-men-in-meeting.jpg"
+              alt="A man in a video meeting with a colleague on his laptop"
+              width="510"
+              height="484"
+            />
           </li>
-          <li class="tools__item">
-            <span class="tools__icon tools__icon--prettier" aria-hidden="true"></span>
-            <span class="tools__name">Prettier</span>
-            <span class="tools__desc">Opinionated code formatting</span>
-          </li>
-          <li class="tools__item">
-            <span class="tools__icon tools__icon--github" aria-hidden="true"></span>
-            <span class="tools__name">GitHub Pages</span>
-            <span class="tools__desc">Free hosting, deployed in one command</span>
+          <li class="gallery__item">
+            <img
+              class="gallery__image"
+              src="./images/desktop/image-man-texting.jpg"
+              alt="A man smiling as he texts on his phone"
+              width="510"
+              height="484"
+            />
           </li>
         </ul>
-      </article>
+
+        <div class="features__content">
+          <p class="features__eyebrow">Built for modern use</p>
+          <h2 class="features__title" id="features-title">Smarter meetings, all in one place</h2>
+          <p class="features__text">
+            Send messages, share files, show your screen, and record your meetings — all in one
+            workspace. Control who can join with invite-only team access, data encryption, and data
+            export.
+          </p>
+        </div>
+      </section>
+
+      <section class="cta" aria-labelledby="cta-title">
+        <div class="divider divider--overlap" aria-hidden="true">
+          <span class="divider__number">02</span>
+        </div>
+
+        <!-- Decorative background photo, art-directed per breakpoint -->
+        <picture class="cta__background">
+          <source media="(min-width: 62rem)" srcset="./images/desktop/image-footer.jpg" />
+          <source media="(min-width: 48rem)" srcset="./images/tablet/image-footer.jpg" />
+          <img
+            class="cta__background-image"
+            src="./images/mobile/image-footer.jpg"
+            alt=""
+            width="750"
+            height="856"
+          />
+        </picture>
+
+        <div class="cta__content">
+          <h2 class="cta__title" id="cta-title">Experience more together</h2>
+          <p class="cta__text">
+            Stay connected with reliable HD meetings and unlimited one-on-one and group video
+            sessions.
+          </p>
+          <a class="button button--purple" href="#">
+            Download <span class="button__version">v1.3</span>
+          </a>
+        </div>
+      </section>
     </main>
   </body>
 </html>
