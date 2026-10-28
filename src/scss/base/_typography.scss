@@ -1,1 +1,22 @@
-// Sassy styles go here
+@use "../abstracts" as *;
+
+body {
+  font-family: $font-family;
+  color: var(--theme-text);
+  background-color: var(--theme-bg);
+  @include text-preset(4);
+}
+
+h1,
+h2 {
+  text-wrap: balance;
+  color: var(--theme-heading);
+}
+
+h1 {
+  @include text-preset(1);
+}
+
+h2 {
+  @include text-preset(2);
+}
