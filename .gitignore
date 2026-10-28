@@ -31,3 +31,5 @@ build
 .vscode
 *.code-workspace
 *.txt
+# Frontend Mentor challenge files (premium design files must not be shared)
+fem-resources/
