@@ -1,1 +1,16 @@
-// Sassy styles go here
+// Sass variables and maps (colors, font stacks, spacing scales)
+
+// Meet's palette, as named in the design file's color variables. The -400
+// shades are button hover states, which the style guide's swatches leave out.
+$palette: (
+  "cyan-300": #8fe3f9,
+  "cyan-400": #71c0d4,
+  "cyan-600": #4d96a9,
+  "purple-300": #d9b8ff,
+  "purple-400": #b18bdd,
+  "purple-600": #855fb1,
+  "slate-300": #d1d1df,
+  "slate-600": #87879d,
+  "slate-900": #28283d,
+  "white": #fafafa,
+);
