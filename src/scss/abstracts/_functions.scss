@@ -1,6 +1,16 @@
+@use "sass:map";
 @use "sass:math";
+@use "variables" as *;
 
 // Convert design pixels to rem: rem(24) => 1.5rem
 @function rem($px, $base: 16) {
   @return math.div($px, $base) * 1rem;
+}
+
+// A step from the design's spacing scale, in rem: space(300) => 1.5rem
+@function space($step) {
+  @if not map.has-key($spacing, $step) {
+    @error "Unknown spacing step: #{$step}.";
+  }
+  @return rem(map.get($spacing, $step));
 }

@@ -1,4 +1,6 @@
 @use "sass:map";
+@use "variables" as *;
+@use "functions" as *;
 
 $breakpoints: (
   xs: 0,
@@ -17,6 +19,34 @@ $breakpoints: (
     @warn "Unknown breakpoint: #{$breakpoint}.";
     @media (min-width: map.get($breakpoints, xs)) {
       @content;
+    }
+  }
+}
+
+// One of the design's text presets, with its sizes per breakpoint: text-preset(2)
+@mixin text-preset($preset) {
+  @if not map.has-key($text-presets, $preset) {
+    @error "Unknown text preset: #{$preset}.";
+  }
+  $p: map.get($text-presets, $preset);
+
+  font-weight: map.get($p, weight);
+  line-height: map.get($p, line-height);
+
+  @if map.has-key($p, letter-spacing) {
+    letter-spacing: rem(map.get($p, letter-spacing));
+  }
+  @if map.get($p, uppercase) {
+    text-transform: uppercase;
+  }
+
+  @each $breakpoint, $size in map.get($p, sizes) {
+    @if $breakpoint == xs {
+      font-size: rem($size);
+    } @else {
+      @include breakpoints($breakpoint) {
+        font-size: rem($size);
+      }
     }
   }
 }

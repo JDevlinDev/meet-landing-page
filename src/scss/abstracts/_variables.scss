@@ -14,3 +14,72 @@ $palette: (
   "slate-900": #28283d,
   "white": #fafafa,
 );
+
+// Red Hat Display, loaded from Google Fonts in index.html
+$font-family: "Red Hat Display", sans-serif;
+$font-weight-medium: 500;
+$font-weight-black: 900;
+
+// The design file's spacing variables, in px: space(300) => 1.5rem
+$spacing: (
+  50: 4,
+  100: 8,
+  200: 16,
+  300: 24,
+  400: 32,
+  500: 40,
+  700: 56,
+  800: 64,
+  900: 72,
+  1000: 80,
+  1400: 112,
+);
+
+// The design file's text presets. Sizes are px, keyed by the breakpoint they
+// start at (mobile-first), so preset 4 stays 16px until the desktop size.
+$text-presets: (
+  1: (
+    weight: $font-weight-black,
+    line-height: 1.1,
+    sizes: (
+      xs: 40,
+      md: 48,
+      lg: 64,
+    ),
+  ),
+  2: (
+    weight: $font-weight-black,
+    line-height: 1.1,
+    sizes: (
+      xs: 32,
+      md: 36,
+      lg: 40,
+    ),
+  ),
+  3: (
+    weight: $font-weight-black,
+    line-height: 1.1,
+    letter-spacing: 4,
+    uppercase: true,
+    sizes: (
+      xs: 12,
+      md: 14,
+      lg: 16,
+    ),
+  ),
+  4: (
+    weight: $font-weight-medium,
+    line-height: 1.5,
+    sizes: (
+      xs: 16,
+      lg: 18,
+    ),
+  ),
+  5: (
+    weight: $font-weight-black,
+    line-height: 1.5,
+    sizes: (
+      xs: 16,
+    ),
+  ),
+);
