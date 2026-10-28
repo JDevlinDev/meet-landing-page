@@ -1,1 +1,27 @@
-// Sassy styles go here
+@use "../abstracts" as *;
+
+:root {
+  color-scheme: light;
+
+  // Turn every color in $palette into a CSS custom property: --color-cyan-600, ...
+  @each $name, $color in $palette {
+    --color-#{$name}: #{$color};
+  }
+
+  // Semantic tokens: components use these, so a new theme only remaps this list
+  --theme-bg: var(--color-white);
+  --theme-heading: var(--color-slate-900);
+  --theme-text: var(--color-slate-600);
+  --theme-text-inverse: var(--color-white);
+  --theme-accent: var(--color-cyan-600);
+  --theme-border: var(--color-slate-300);
+  --theme-overlay: var(--color-cyan-600);
+
+  // Buttons: background, hover background, and the "v1.3" label
+  --theme-primary: var(--color-cyan-600);
+  --theme-primary-hover: var(--color-cyan-400);
+  --theme-primary-soft: var(--color-cyan-300);
+  --theme-secondary: var(--color-purple-600);
+  --theme-secondary-hover: var(--color-purple-400);
+  --theme-secondary-soft: var(--color-purple-300);
+}
