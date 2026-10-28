@@ -1,9 +1,1 @@
-// Dark background with a soft brand-blue glow at the top
-body {
-  background-color: var(--theme-bg);
-  background-image: radial-gradient(
-    ellipse 80% 50% at 50% 0%,
-    color-mix(in srgb, var(--theme-glow) 35%, transparent),
-    transparent
-  );
-}
+// Sassy styles go here
