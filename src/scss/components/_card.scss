@@ -1,0 +1,51 @@
+@use "../abstracts" as *;
+
+.card {
+  max-width: rem(440);
+  padding: rem(28) rem(24);
+  border: 1px solid var(--theme-border);
+  border-radius: rem(16);
+  background-color: var(--theme-surface);
+  box-shadow: 0 rem(24) rem(48) hsl(228 45% 3% / 0.5);
+
+  @include breakpoints("md") {
+    padding: rem(40);
+  }
+
+  // Pill label above the title, in Frontend Mentor's label style
+  &__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: rem(8);
+    margin-bottom: rem(18);
+    padding: rem(6) rem(14) rem(6) rem(10);
+    border: 1px solid color-mix(in srgb, var(--theme-brand) 60%, transparent);
+    border-radius: 100vmax;
+    background-color: color-mix(in srgb, var(--theme-brand) 25%, transparent);
+    font-size: rem(12);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--theme-accent);
+  }
+
+  &__eyebrow-logo {
+    width: rem(18);
+    height: rem(18);
+    background-color: currentColor;
+    mask: url("../images/icons/frontendmentor.svg") center / contain no-repeat;
+  }
+
+  &__title {
+    margin-bottom: rem(12);
+    font-size: rem(30);
+
+    @include breakpoints("md") {
+      font-size: rem(36);
+    }
+  }
+
+  &__text {
+    font-size: rem(16);
+  }
+}

@@ -1,0 +1,33 @@
+# Design files
+*.sketch
+*.fig
+*.xd
+
+# Node modules
+node_modules
+
+# Build directories
+dist
+dist-dev
+build
+
+# OS-generated files
+.DS_Store
+
+# Cache files
+.*-cache
+*.cache
+
+# Prettier configuration
+.prettierignore
+
+# Templates
+*-template*
+
+# Compressed files
+*.zip
+
+# VS Code project related files
+.vscode
+*.code-workspace
+*.txt

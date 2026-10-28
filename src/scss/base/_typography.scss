@@ -1,0 +1,31 @@
+@use "../abstracts" as *;
+
+body {
+  font-family: $font-body;
+  line-height: 1.6;
+  color: var(--theme-text);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-heading;
+  font-weight: 700;
+  line-height: 1.15;
+  text-wrap: balance;
+  color: var(--theme-heading);
+}
+
+code {
+  padding: 0.1em 0.4em;
+  border: 1px solid var(--theme-border);
+  border-radius: 0.375em;
+  background-color: var(--theme-surface-raised);
+  font-family: $font-code;
+  font-size: 0.85em;
+  color: var(--theme-accent);
+  white-space: nowrap;
+}

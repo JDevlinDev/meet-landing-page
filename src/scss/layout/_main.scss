@@ -1,0 +1,10 @@
+@use "../abstracts" as *;
+
+// Center the page content both vertically and horizontally
+.main {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: rem(24);
+}
