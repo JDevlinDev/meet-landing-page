@@ -24,4 +24,11 @@
     color: var(--theme-text);
     @include text-preset(5);
   }
+
+  // Pulls the next element up so the circle's lower half sits over it
+  &--overlap {
+    position: relative;
+    z-index: 1;
+    margin-bottom: rem(-28);
+  }
 }
