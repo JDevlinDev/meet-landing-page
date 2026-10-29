@@ -1,1 +1,109 @@
-// Sassy styles go here
+@use "../abstracts" as *;
+
+// Below lg: one combined faces image above the text, cropped to fit.
+// From lg: faces either side of the text, bleeding past the page edges.
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: center;
+  gap: rem(48);
+  padding: space(800) space(400) space(400);
+  overflow-x: clip;
+
+  @include breakpoints("md") {
+    gap: space(900);
+    padding-bottom: space(800);
+  }
+
+  @include breakpoints("lg") {
+    grid-template-columns: minmax(0, rem(304)) rem(448) minmax(0, rem(304));
+    justify-content: center;
+    gap: space(400);
+    padding-inline: space(1000);
+  }
+
+  &__image {
+    display: block;
+
+    img {
+      display: block;
+      max-width: none;
+      height: rem(160);
+      width: auto;
+
+      @include breakpoints("md") {
+        height: rem(303);
+      }
+    }
+
+    &--left {
+      display: flex;
+      justify-content: center;
+      justify-self: stretch;
+      overflow: clip;
+
+      // Flex end alignment lets the image overflow leftwards, which grid's
+      // justify-self would not
+      @include breakpoints("lg") {
+        grid-column: 1;
+        grid-row: 1;
+        justify-content: flex-end;
+        align-self: start;
+        padding-inline-end: rem(96);
+        overflow: visible;
+      }
+    }
+
+    &--right {
+      display: none;
+
+      @include breakpoints("lg") {
+        display: block;
+        grid-column: 3;
+        grid-row: 1;
+        justify-self: start;
+        align-self: start;
+        // Sits 57px lower than the left image, as in the design
+        margin-top: rem(57);
+        margin-inline-start: rem(96);
+        height: rem(303);
+        width: auto;
+        max-width: none;
+      }
+    }
+  }
+
+  &__content {
+    display: grid;
+    justify-items: center;
+    gap: space(300);
+    max-width: rem(448);
+    text-align: center;
+
+    @include breakpoints("lg") {
+      grid-column: 2;
+      grid-row: 1;
+      align-self: center;
+      gap: space(400);
+    }
+  }
+
+  // The desktop design sets the title solid (64px on 64px), not preset 1's 1.1
+  &__title {
+    @include breakpoints("lg") {
+      line-height: 1;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: space(200);
+
+    @include breakpoints("md") {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+}
