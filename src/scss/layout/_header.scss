@@ -1,1 +1,15 @@
-// Sassy styles go here
+@use "../abstracts" as *;
+
+.header {
+  display: flex;
+  justify-content: center;
+  padding: rem(48) space(400) 0;
+
+  @include breakpoints("lg") {
+    padding-top: space(1000);
+  }
+
+  &__logo {
+    display: block;
+  }
+}
