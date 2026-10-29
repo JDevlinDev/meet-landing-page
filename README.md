@@ -41,7 +41,7 @@ What I learned about delegating this way:
 
 - **State the outcome, not the steps.** "Get the project to a working state, where I can run it myself from the terminal and preview it in my browser" was enough. Working out _how_ (the images were never copied in, the dependencies weren't installed) was Claude's job.
 - **Hand over a category, not a list.** At one point I said "start on anything hard-coded into the Figma file like that." That one sentence covered the colors, fonts, spacing scale, text presets and every component measurement.
-- **Defer decisions without guilt.** When a layout question came up at the 992px breakpoint, I said I'd look at it on my desktop first. It's tracked as an [open issue](#open-issues), not quietly decided for me.
+- **Defer decisions without guilt.** When a layout question came up at the 992px breakpoint, I said I'd look at it on my desktop first. It was tracked as an [open issue](#open-issues), not quietly decided for me, and the answer turned out to be neither option.
 - **Say so when something's off.** Once, Claude read a declined permission prompt as me not wanting the divider. I said I'd never asked to skip anything, and it built the divider right away. Short feedback works well in both directions.
 
 ## The delegation log
@@ -105,7 +105,9 @@ npm run push-gh    # build and deploy to GitHub Pages
 
 ## Open issues
 
-- **Where should the hero's desktop layout start?** It currently switches to the three-column desktop layout at 992px. Just past that width, the faces images are cut roughly in half by the page edge. Starting it at 1200px instead would fix that, but I want to see it on a big screen before deciding. That's the remote management style: I hand off the implementation, but this kind of decision stays mine.
+None right now. The one that was here:
+
+- ✅ **Where should the hero's desktop layout start?** ~~992px, or 1200px?~~ Neither. After looking at it on my laptop the next day, I spotted two things. The hero had 2rem of side padding it didn't need, and the breakpoints were still the template's (`sm`/`md`/`lg`/`xl`), not Frontend Mentor's. The breakpoints now follow the design's Figma frames: mobile, tablet from 768px, desktop from 1440px. The faces bleed to the page edge on every screen, as in the design. That's the remote management style: I hand off the implementation, but this kind of decision stays mine.
 
 ## Acknowledgments
 
