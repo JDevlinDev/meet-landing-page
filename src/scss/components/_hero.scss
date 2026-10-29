@@ -1,8 +1,8 @@
 @use "../abstracts" as *;
 
-// Below lg: one combined faces image above the text. From lg: faces either
-// side of the text. Either way the faces bleed past the page edges, so the
-// hero has no horizontal padding and clips at the viewport instead.
+// Below desktop: one combined faces image above the text. From desktop: faces
+// either side of the text. Either way the faces bleed past the page edges, so
+// the hero has no horizontal padding and clips at the viewport instead.
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -11,12 +11,12 @@
   padding-block: space(800) space(400);
   overflow-x: clip;
 
-  @include breakpoints("md") {
+  @include breakpoints("tablet") {
     gap: space(900);
     padding-bottom: space(800);
   }
 
-  @include breakpoints("lg") {
+  @include breakpoints("desktop") {
     grid-template-columns: minmax(0, rem(304)) rem(448) minmax(0, rem(304));
     justify-content: center;
     gap: space(400);
@@ -31,7 +31,7 @@
       height: rem(160);
       width: auto;
 
-      @include breakpoints("md") {
+      @include breakpoints("tablet") {
         height: rem(303);
       }
     }
@@ -43,7 +43,7 @@
       justify-content: center;
       justify-self: stretch;
 
-      @include breakpoints("lg") {
+      @include breakpoints("desktop") {
         grid-column: 1;
         grid-row: 1;
         justify-content: flex-end;
@@ -55,7 +55,7 @@
     &--right {
       display: none;
 
-      @include breakpoints("lg") {
+      @include breakpoints("desktop") {
         display: block;
         grid-column: 3;
         grid-row: 1;
@@ -79,12 +79,12 @@
     max-width: min(100% - space(400) * 2, rem(305));
     text-align: center;
 
-    @include breakpoints("md") {
+    @include breakpoints("tablet") {
       max-width: min(100% - space(400) * 2, rem(448));
     }
 
     // The middle grid column is already the design's 448px
-    @include breakpoints("lg") {
+    @include breakpoints("desktop") {
       grid-column: 2;
       grid-row: 1;
       align-self: center;
@@ -95,7 +95,7 @@
 
   // The desktop design sets the title solid (64px on 64px), not preset 1's 1.1
   &__title {
-    @include breakpoints("lg") {
+    @include breakpoints("desktop") {
       line-height: 1;
     }
   }
@@ -106,7 +106,7 @@
     align-items: center;
     gap: space(200);
 
-    @include breakpoints("md") {
+    @include breakpoints("tablet") {
       flex-direction: row;
       justify-content: center;
     }

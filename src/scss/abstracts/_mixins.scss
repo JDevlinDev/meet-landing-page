@@ -2,12 +2,11 @@
 @use "variables" as *;
 @use "functions" as *;
 
+// The widths of the design's three frames: 375, 768 and 1440px
 $breakpoints: (
-  xs: 0,
-  sm: 16rem,
-  md: 48rem,
-  lg: 62rem,
-  xl: 75rem,
+  mobile: 0,
+  tablet: 48rem,
+  desktop: 90rem,
 );
 
 @mixin breakpoints($breakpoint) {
@@ -17,7 +16,7 @@ $breakpoints: (
     }
   } @else {
     @warn "Unknown breakpoint: #{$breakpoint}.";
-    @media (min-width: map.get($breakpoints, xs)) {
+    @media (min-width: map.get($breakpoints, mobile)) {
       @content;
     }
   }
@@ -41,7 +40,7 @@ $breakpoints: (
   }
 
   @each $breakpoint, $size in map.get($p, sizes) {
-    @if $breakpoint == xs {
+    @if $breakpoint == mobile {
       font-size: rem($size);
     } @else {
       @include breakpoints($breakpoint) {

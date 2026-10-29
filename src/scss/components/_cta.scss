@@ -45,7 +45,7 @@
     color: var(--theme-text-inverse);
 
     // h2, paragraph, button: 445 / 355 / 256 at the design's 1120px width
-    @include breakpoints("lg") {
+    @include breakpoints("desktop") {
       grid-template-columns: minmax(0, 445fr) minmax(0, 355fr) minmax(auto, 256fr);
       align-items: center;
       gap: space(400);

@@ -1,6 +1,6 @@
 @use "../abstracts" as *;
 
-// 2 x 2 photos on mobile, one row of 4 from md. Aspect ratios follow the
+// 2 x 2 photos on mobile, one row of 4 from tablet. Aspect ratios follow the
 // design's crops at each breakpoint.
 .gallery {
   display: grid;
@@ -8,13 +8,13 @@
   gap: space(200);
   width: 100%;
 
-  @include breakpoints("md") {
+  @include breakpoints("tablet") {
     grid-template-columns: repeat(4, 1fr);
     gap: space(300);
     max-width: rem(680);
   }
 
-  @include breakpoints("lg") {
+  @include breakpoints("desktop") {
     gap: space(400);
     max-width: rem(1120);
   }
@@ -27,11 +27,11 @@
     border-radius: rem(8);
     object-fit: cover;
 
-    @include breakpoints("md") {
+    @include breakpoints("tablet") {
       aspect-ratio: 152 / 160;
     }
 
-    @include breakpoints("lg") {
+    @include breakpoints("desktop") {
       aspect-ratio: 1;
     }
   }

@@ -42,18 +42,18 @@ $text-presets: (
     weight: $font-weight-black,
     line-height: 1.1,
     sizes: (
-      xs: 40,
-      md: 48,
-      lg: 64,
+      mobile: 40,
+      tablet: 48,
+      desktop: 64,
     ),
   ),
   2: (
     weight: $font-weight-black,
     line-height: 1.1,
     sizes: (
-      xs: 32,
-      md: 36,
-      lg: 40,
+      mobile: 32,
+      tablet: 36,
+      desktop: 40,
     ),
   ),
   3: (
@@ -62,24 +62,24 @@ $text-presets: (
     letter-spacing: 4,
     uppercase: true,
     sizes: (
-      xs: 12,
-      md: 14,
-      lg: 16,
+      mobile: 12,
+      tablet: 14,
+      desktop: 16,
     ),
   ),
   4: (
     weight: $font-weight-medium,
     line-height: 1.5,
     sizes: (
-      xs: 16,
-      lg: 18,
+      mobile: 16,
+      desktop: 18,
     ),
   ),
   5: (
     weight: $font-weight-black,
     line-height: 1.5,
     sizes: (
-      xs: 16,
+      mobile: 16,
     ),
   ),
 );

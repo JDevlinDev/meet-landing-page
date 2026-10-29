@@ -6,11 +6,11 @@
   gap: space(800);
   padding: space(400) space(400) space(800);
 
-  @include breakpoints("md") {
+  @include breakpoints("tablet") {
     padding-top: space(700);
   }
 
-  @include breakpoints("lg") {
+  @include breakpoints("desktop") {
     padding: space(700) space(1000) space(900);
   }
 
@@ -18,7 +18,7 @@
     max-width: rem(504);
     text-align: center;
 
-    @include breakpoints("lg") {
+    @include breakpoints("desktop") {
       max-width: rem(544);
     }
   }

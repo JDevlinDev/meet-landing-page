@@ -16,7 +16,7 @@ A Frontend Mentor challenge: static HTML + Sass, bundled with Parcel, deployed t
 
 - 7-1 pattern: `abstracts/`, `vendors/`, `base/`, `themes/`, `layout/`, `components/`, `pages/`, plus `style.scss` as the root stylesheet. Each folder has an `_index.scss` that `@forward`s its partials. Use `@use`/`@forward`, never `@import`.
 - `abstracts/` (variables, functions, mixins) outputs no CSS. Partials pull it in with `@use "../abstracts" as *;`.
-- `breakpoints()` mixin: `sm` 16rem, `md` 48rem, `lg` 62rem, `xl` 75rem. Styles are mobile-first.
+- `breakpoints()` mixin: `mobile` 0, `tablet` 48rem (768px), `desktop` 90rem (1440px), the widths of the design's Figma frames. Breakpoints follow the Frontend Mentor design, not the template's old `sm`/`md`/`lg`/`xl` scale. Styles are mobile-first; `<picture>` media queries in `index.html` use the same widths.
 - `url()` paths in any partial are relative to `src/scss/style.scss` (Sass merges partials before Parcel resolves URLs), e.g. `url("../images/icons/sass.svg")`. Don't put `url()` inside custom properties; bundlers may not rewrite them.
 - Colors: `$palette` (abstracts) becomes `--color-*` custom properties in `themes/_default.scss`, which also maps them to semantic `--theme-*` tokens. Components use only `--theme-*`, so a new theme (e.g. light mode) only remaps that list.
 - BEM naming: `.block`, `.block__element`, `.block--modifier`. One partial per block in `components/`.
