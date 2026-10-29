@@ -1,1 +1,38 @@
-// Sassy styles go here
+@use "../abstracts" as *;
+
+// 2 x 2 photos on mobile, one row of 4 from md. Aspect ratios follow the
+// design's crops at each breakpoint.
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: space(200);
+  width: 100%;
+
+  @include breakpoints("md") {
+    grid-template-columns: repeat(4, 1fr);
+    gap: space(300);
+    max-width: rem(680);
+  }
+
+  @include breakpoints("lg") {
+    gap: space(400);
+    max-width: rem(1120);
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 148 / 144;
+    border-radius: rem(8);
+    object-fit: cover;
+
+    @include breakpoints("md") {
+      aspect-ratio: 152 / 160;
+    }
+
+    @include breakpoints("lg") {
+      aspect-ratio: 1;
+    }
+  }
+}
