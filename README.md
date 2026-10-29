@@ -2,6 +2,8 @@
 
 My solution to the [Meet landing page](https://www.frontendmentor.io/challenges/meet-landing-page-rbTDS6OUR) challenge on Frontend Mentor.
 
+**🌐 Live site:** [jdevlindev.github.io/meet-landing-page](https://jdevlindev.github.io/meet-landing-page/)
+
 I built it from my phone while doing my actual job. More precisely, Claude built it on my laptop while I did my actual job, and every so often I checked my phone and sent the next instruction. I showed the result to a coworker. They asked how long it took. I told them it took about as long as my workday, but I wasn't really there for most of it.
 
 ![The Meet landing page at desktop width](./screenshots/desktop.jpg)
