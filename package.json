@@ -4,11 +4,11 @@
   "source": "src/index.html",
   "description": "Newbie FEM Starter Pack: a cheeky little template for Frontend Mentor challenges",
   "scripts": {
-    "start": "npx parcel --host 0.0.0.0 --port 4321 --dist-dir dist-dev",
-    "build": "npm run cleanup && npx parcel build --public-url ./",
+    "start": "npx parcel --host 0.0.0.0 --port 4321 --dist-dir dist-dev --cache-dir .parcel-dev-cache",
+    "build": "rm -rf dist .parcel-cache && npx parcel build --public-url ./",
     "push-gh": "npm run build && gh-pages --dist dist --branch gh-pages --message \"Deploy $(git rev-parse --short HEAD)\"",
     "format": "prettier --write src",
-    "cleanup": "rm -rf dist dist-dev .parcel-cache"
+    "cleanup": "rm -rf dist dist-dev .parcel-cache .parcel-dev-cache"
   },
   "keywords": [
     "web development",

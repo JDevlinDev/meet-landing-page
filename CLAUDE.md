@@ -4,8 +4,9 @@ A Frontend Mentor challenge: static HTML + Sass, bundled with Parcel, deployed t
 
 ## Scripts
 
-- `npm start`: Parcel dev server on port 4321. Writes to `dist-dev/`, never `dist/`, so a running dev server can't leak dev bundles into a deploy.
-- `npm run build`: clean production build in `dist/` with relative paths (`--public-url ./`).
+- `npm start`: Parcel dev server on port 4321. Writes to `dist-dev/`, never `dist/`, so a running dev server can't leak dev bundles into a deploy. Uses its own `.parcel-dev-cache/`, so a build can run alongside it.
+- `npm run build`: clean production build in `dist/` with relative paths (`--public-url ./`). Clears only `dist/` and `.parcel-cache/`; deleting the dev server's cache crashes it.
+- `npm run cleanup`: deletes all build output and both caches. Stop the dev server first.
 - `npm run push-gh`: builds, then publishes `dist/` to the `gh-pages` branch. Requires the `origin` remote to use SSH.
 - `npm run format`: Prettier over `src/`.
 - `package-lock.json` is committed; install with `npm ci`.
