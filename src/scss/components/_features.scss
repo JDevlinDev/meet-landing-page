@@ -1,1 +1,37 @@
-// Sassy styles go here
+@use "../abstracts" as *;
+
+.features {
+  display: grid;
+  justify-items: center;
+  gap: space(800);
+  padding: space(400) space(400) space(800);
+
+  @include breakpoints("md") {
+    padding-top: space(700);
+  }
+
+  @include breakpoints("lg") {
+    padding: space(700) space(1000) space(900);
+  }
+
+  &__content {
+    max-width: rem(504);
+    text-align: center;
+
+    @include breakpoints("lg") {
+      max-width: rem(544);
+    }
+  }
+
+  &__eyebrow {
+    margin-bottom: space(200);
+    color: var(--theme-accent);
+    @include text-preset(3);
+  }
+
+  &__title {
+    max-width: rem(445);
+    margin-inline: auto;
+    margin-bottom: space(400);
+  }
+}
