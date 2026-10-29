@@ -1,1 +1,40 @@
-// Sassy styles go here
+@use "../abstracts" as *;
+
+// Pill button, cyan by default. Modifiers swap the colors through local
+// custom properties.
+.button {
+  --button-bg: var(--theme-primary);
+  --button-bg-hover: var(--theme-primary-hover);
+  --button-version: var(--theme-primary-soft);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: space(50);
+  padding: space(200) space(500);
+  border-radius: 100vmax;
+  background-color: var(--button-bg);
+  color: var(--theme-text-inverse);
+  white-space: nowrap;
+  transition: background-color 0.2s ease;
+  @include text-preset(5);
+
+  &:hover {
+    background-color: var(--button-bg-hover);
+  }
+
+  &:focus-visible {
+    outline: rem(2) solid var(--button-bg);
+    outline-offset: rem(3);
+  }
+
+  &--purple {
+    --button-bg: var(--theme-secondary);
+    --button-bg-hover: var(--theme-secondary-hover);
+    --button-version: var(--theme-secondary-soft);
+  }
+
+  &__version {
+    color: var(--button-version);
+  }
+}
