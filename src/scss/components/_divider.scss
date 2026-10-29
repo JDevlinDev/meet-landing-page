@@ -1,1 +1,27 @@
-// Sassy styles go here
+@use "../abstracts" as *;
+
+// Section marker: a vertical line down into a numbered circle
+.divider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &::before {
+    content: "";
+    width: 1px;
+    height: rem(80);
+    background-color: var(--theme-border);
+  }
+
+  &__number {
+    display: grid;
+    place-items: center;
+    width: rem(56);
+    aspect-ratio: 1;
+    border: 1px solid var(--theme-border);
+    border-radius: 50%;
+    background-color: var(--theme-bg);
+    color: var(--theme-text);
+    @include text-preset(5);
+  }
+}
